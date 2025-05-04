@@ -187,8 +187,9 @@ class Game:
                 pygame.sprite.spritecollide(alien, self.blocks, True)
 
                 if pygame.sprite.spritecollide(alien, self.player, False):
-                    pygame.quit()
-                    sys.exit()
+                    self.game_over = True
+                    self.display_game_over()
+                    return
 
 
     def display_lives(self):
